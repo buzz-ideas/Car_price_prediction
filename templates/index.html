@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+    <style>
+        body {
+            background-color: #45a049;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        a {
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Car Price Prediction</h1>
+    <p>We use machine learning to predict the selling price of cars based on various factors!</p>
+    <div>
+        <a href="{{ url_for('aboutus') }}">About Us</a>
+        <a href="{{ url_for('predict') }}">Prediction Page</a>
+    </div>
+</body>
+</html>

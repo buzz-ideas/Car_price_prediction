@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            background-color: rgba(61, 86, 29, 0.737);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .content {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: left;
+        }
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #12f3e4;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            color: #f1e60e;
+        }
+    </style>
+</head>
+<body>
+    <h1>About Us</h1>
+    <div class="content">
+        <h3>Our Mission</h3>
+        <p>At Car Price Predictor, we use advanced machine learning techniques to predict the market price of cars based on various factors such as brand, model, year, fuel type, and more. Our mission is to make car buying and selling more transparent and efficient.</p>
+
+        <h3>What We Do</h3>
+        <p>We provide users with an easy-to-use platform to predict the selling price of a car using our machine learning models. Simply provide the car details, and we will estimate its value!</p>
+
+        <h3>Our Technology</h3>
+        <p>Our platform is powered by the latest machine learning algorithms, including models like Random Forest and Gradient Boosting, that ensure accurate price predictions based on historical data and patterns.</p>
+
+        <h3>Creators of This Application</h3>
+        <p>This application was created by:</p>
+        <ul>
+            <li>Shaikh Mustaqeem</li>
+            <li>Shaikh Farazuddin</li>
+            <li>Shaikh Mohd Saad</li>
+        </ul>
+    </div>
+    <a class="back-link" href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

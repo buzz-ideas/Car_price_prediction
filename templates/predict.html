@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Page</title>
+    <style>
+        body {
+            background-color: #45a049;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            text-align: left;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .prediction-result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Car Price Prediction</h1>
+    <p>Enter the details of the car to get an estimated selling price:</p>
+    
+    <div class="form-container">
+        <form action="{{ url_for('predict') }}" method="POST">
+            <label for="seller_type">Seller Type:</label>
+            <select id="seller_type" name="seller_type" required>
+                <option value="0">Individual</option>
+                <option value="1">Dealer</option>
+                <option value="2">Trustmark Dealer</option>
+            </select>
+
+            <label for="owner">Owner:</label>
+            <select id="owner" name="owner" required>
+                <option value="0">First Owner</option>
+                <option value="1">Second Owner</option>
+                <option value="2">Fourth & Above Owner</option>
+                <option value="3">Third Owner</option>
+                <option value="4">Test Drive Car</option>
+            </select>
+
+            <label for="transmission">Transmission:</label>
+            <select id="transmission" name="transmission" required>
+                <option value="0">Manual</option>
+                <option value="1">Automatic</option>
+            </select>
+
+            <label for="fuel">Fuel:</label>
+            <select id="fuel" name="fuel" required>
+                <option value="0">Petrol</option>
+                <option value="1">Diesel</option>
+                <option value="2">CNG</option>
+                <option value="3">LPG</option>
+                <option value="4">Electric</option>
+            </select>
+
+            <label for="year">Year:</label>
+            <input type="text" id="year" name="year" required placeholder="Enter the year of the car">
+
+            <label for="kilometers_driven">Kilometers Driven:</label>
+            <input type="text" id="kilometers_driven" name="kilometers_driven" required placeholder="Enter the kilometers driven">
+
+            <input type="submit" value="Predict Price">
+        </form>
+    </div>
+
+    {% if prediction %}
+    <div class="prediction-result">
+        <h3>Predicted Selling Price: ₹{{ prediction }}</h3>
+    </div>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
